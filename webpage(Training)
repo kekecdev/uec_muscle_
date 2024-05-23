@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About UEC 筋トレサークル</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .menu-button {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to right, #ff7676, #ffcccc);
+            color: white;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .content h2 {
+            margin: 40px 0 20px;
+            color: #e74c3c;
+        }
+        .info-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .info-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 40px);
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .info-box.highlight {
+            border-left: 5px solid #3498db;
+        }
+        .info-box h3 {
+            margin-top: 0;
+            color: #3498db;
+        }
+        .before-after {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+        }
+        .before-after .box {
+            padding: 40px 20px;
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            transition: transform 0.3s;
+        }
+        .before-after .box.before {
+            background-color: #e74c3c;
+        }
+        .before-after .box.after {
+            background-color: #3498db;
+        }
+        .before-after .box:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .info-box {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .info-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="menu-button">☰</button>
+
+    <div class="header">
+        <h1>ABOUT UEC 筋トレサークル</h1>
+    </div>
+
+    <div class="content">
+        <div class="info-boxes">
+            <div class="info-box">
+                <h3>設立と認定</h3>
+                <p>UEC筋トレサークルは、大学に認定された公式のサークルです。学生たちが集まり、共にトレーニングを行います。</p>
+            </div>
+            <div class="info-box">
+                <h3>メンバーの目的</h3>
+                <p>メンバーの目的は、健康的な生活を送り、筋力を高めることです。初心者から経験者まで、全ての人を歓迎します。</p>
+            </div>
+            <div class="info-box">
+                <h3>設立の経緯</h3>
+                <p>このサークルは、健康とフィットネスに情熱を持つ学生によって設立されました。共に成長し、励まし合いながら活動しています。</p>
+            </div>
+            <div class="info-box">
+                <h3>サークル理念</h3>
+                <p>サークルの理念は、正しい情報を提供し、効果的なトレーニング方法を共有することです。みんなで健康を目指しましょう。</p>
+            </div>
+            <div class="info-box highlight">
+                <h3>正しい情報の提供</h3>
+                <p>UEC筋トレサークルは、科学的根拠に基づいたトレーニング情報を提供します。安心してトレーニングに励むことができます。</p>
+            </div>
+            <div class="info-box">
+                <h3>サークルの目標</h3>
+                <p>サークルの目標は、全てのメンバーが自分の目標を達成できるようにサポートすることです。互いに助け合いながら成長していきます。</p>
+            </div>
+        </div>
+
+        <h2>部員のビフォーアフター</h2>
+        <div class="before-after">
+            <div class="box before">Before</div>
+            <div class="box after">After</div>
+            <div class="box before">Before</div>
+            <div class="box after">After</div>
+            <div class="box before">Before</div>
+            <div class="box after">After</div>
+            <div class="box before">Before</div>
+            <div class="box after">After</div>
+        </div>
+    </div>
+
+</body>
+</html>
