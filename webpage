@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UEC 筋トレサークル</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .menu-button {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .header {
+            background-image: url('muscle-background.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            padding: 80px 20px;
+            position: relative;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .header p {
+            font-size: 1.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5em;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        .main-content {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .main-content img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .main-content h2 {
+            margin: 20px 0 10px;
+            color: #e74c3c;
+        }
+        .main-content p {
+            margin: 0 0 20px;
+            line-height: 1.6;
+        }
+        .columns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .column {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            flex: 1;
+            min-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .column:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .column h3 {
+            margin-top: 0;
+            color: #3498db;
+        }
+        .selected {
+            border: 2px solid #3498db;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="menu-button">☰</button>
+
+    <div class="header">
+        <h1>Enjoy Muscle Life!</h1>
+        <p>UEC 筋トレサークル</p>
+        <div class="scroll-indicator">↓ Scroll</div>
+    </div>
+
+    <div class="main-content">
+        <img src="group-photo.jpg" alt="サークルの写真">
+        <h2>UEC筋トレサークルとは</h2>
+        <p>筋トレが好きな人が集まり、一緒にトレーニングをするサークルです。初心者から上級者まで、みんなで楽しく筋トレを目指しましょう！</p>
+        <a href="#" class="button">READ MORE</a>
+
+        <h2>筋肥大の三要素</h2>
+        <div class="columns">
+            <div class="column selected">
+                <h3>睡眠</h3>
+                <p>筋肉は休息を取ることで成長します。十分な睡眠をとり、体をリカバリーさせましょう。</p>
+            </div>
+            <div class="column">
+                <h3>食事</h3>
+                <p>エネルギー源、たんぱく質、ビタミン、ミネラルをバランスよく摂取し、筋肉を育てる環境を整えましょう。</p>
+            </div>
+            <div class="column">
+                <h3>筋トレ</h3>
+                <p>適切な負荷と頻度でトレーニングを行うことで、筋肉を刺激し続けましょう。計画的なトレーニングが重要です。</p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <a href="#" class="button">詳しくは こちら</a>
+        </div>
+
+        <h2>Welcome Events</h2>
+        <p>新歓情報</p>
+        <p>X（旧 Twitter）にて新歓を行っております。いつでも入部お待ちしております</p>
+
+        <div class="button-container">
+            <a href="#" class="button">新歓X</a>
+            <a href="#" class="button">Joining the club</a>
+        </div>
+    </div>
+
+</body>
+</html>
