@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -25,18 +26,45 @@
             cursor: pointer;
             z-index: 1000;
         }
+        .menu {
+            display: none;
+            position: fixed;
+            top: 50px;
+            left: 15px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 999;
+        }
+        .menu a {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #f4f4f9;
+        }
+        .menu a:hover {
+            background-color: #e74c3c;
+            color: white;
+        }
         .header {
-            background-image: url('muscle-background.jpg');
+            background-image: url('group-photo.jpg');
             background-size: cover;
             background-position: center;
             text-align: center;
             color: white;
+            height: 100vh;
             padding: 80px 20px;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .header p {
@@ -96,7 +124,7 @@
             min-width: 200px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
         }
         .column:hover {
             transform: translateY(-5px);
@@ -105,10 +133,6 @@
         .column h3 {
             margin-top: 0;
             color: #3498db;
-        }
-        .selected {
-            border: 2px solid #3498db;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
         .button-container {
             text-align: center;
@@ -130,13 +154,24 @@
             background-color: #2980b9;
             transform: translateY(-2px);
         }
+        .selected {
+            border: 2px solid #3498db;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body>
 
     <button class="menu-button">☰</button>
+    <div class="menu">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="training.html">TRAINING</a>
+        <a href="news.html">NEWS</a>
+        <a href="join.html">Joining the club</a>
+    </div>
 
-    <div class="header">
+    <div class="header" id="home">
         <h1>Enjoy Muscle Life!</h1>
         <p>UEC 筋トレサークル</p>
         <div class="scroll-indicator">↓ Scroll</div>
@@ -144,39 +179,72 @@
 
     <div class="main-content">
         <img src="group-photo.jpg" alt="サークルの写真">
-        <h2>UEC筋トレサークルとは</h2>
+        <h2 id="about">UEC筋トレサークルとは</h2>
         <p>筋トレが好きな人が集まり、一緒にトレーニングをするサークルです。初心者から上級者まで、みんなで楽しく筋トレを目指しましょう！</p>
-        <a href="#" class="button">READ MORE</a>
+        <a href="about.html" class="button">READ MORE</a>
 
-        <h2>筋肥大の三要素</h2>
+        <h2 id="training">筋肥大の三要素</h2>
         <div class="columns">
-            <div class="column selected">
+            <div class="column" id="sleep">
                 <h3>睡眠</h3>
                 <p>筋肉は休息を取ることで成長します。十分な睡眠をとり、体をリカバリーさせましょう。</p>
             </div>
-            <div class="column">
+            <div class="column" id="nutrition">
                 <h3>食事</h3>
                 <p>エネルギー源、たんぱく質、ビタミン、ミネラルをバランスよく摂取し、筋肉を育てる環境を整えましょう。</p>
             </div>
-            <div class="column">
+            <div class="column" id="training">
                 <h3>筋トレ</h3>
                 <p>適切な負荷と頻度でトレーニングを行うことで、筋肉を刺激し続けましょう。計画的なトレーニングが重要です。</p>
             </div>
         </div>
 
         <div class="button-container">
-            <a href="#" class="button">詳しくは こちら</a>
+            <a href="training.html" class="button">詳しくは こちら</a>
         </div>
 
-        <h2>Welcome Events</h2>
+        <h2 id="news">Welcome Events</h2>
         <p>新歓情報</p>
         <p>X（旧 Twitter）にて新歓を行っております。いつでも入部お待ちしております</p>
 
         <div class="button-container">
             <a href="#" class="button">新歓X</a>
-            <a href="#" class="button">Joining the club</a>
+            <a href="join.html" class="button">Joining the club</a>
         </div>
     </div>
+
+    <script>
+        const menuButton = document.querySelector('.menu-button');
+        const menu = document.querySelector('.menu');
+        const columns = document.querySelectorAll('.column');
+
+        menuButton.addEventListener('mouseover', () => {
+            menu.style.display = 'block';
+        });
+
+        menuButton.addEventListener('mouseout', () => {
+            menu.style.display = 'none';
+        });
+
+        menu.addEventListener('mouseover', () => {
+            menu.style.display = 'block';
+        });
+
+        menu.addEventListener('mouseout', () => {
+            menu.style.display = 'none';
+        });
+
+        columns.forEach(column => {
+            column.addEventListener('mouseover', () => {
+                columns.forEach(col => col.classList.remove('selected'));
+                column.classList.add('selected');
+            });
+
+            column.addEventListener('mouseout', () => {
+                column.classList.remove('selected');
+            });
+        });
+    </script>
 
 </body>
 </html>
