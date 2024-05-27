@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -76,7 +75,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 1.5em;
+            font-size: 5.0em;
             animation: bounce 2s infinite;
         }
         @keyframes bounce {
@@ -180,7 +179,8 @@
     <div class="main-content">
         <img src="group-photo.jpg" alt="サークルの写真">
         <h2 id="about">UEC筋トレサークルとは</h2>
-        <p>筋トレが好きな人が集まり、一緒にトレーニングをするサークルです。初心者から上級者まで、みんなで楽しく筋トレを目指しましょう！</p>
+        <p>筋トレ好きやダイエット、健康目的の方など幅広い層の学生が集まっております。筋トレは辛いものですがみんなで楽しんでかっこいい体を目指しましょう！！
+        </p>
         <a href="about.html" class="button">READ MORE</a>
 
         <h2 id="training">筋肥大の三要素</h2>
@@ -205,10 +205,10 @@
 
         <h2 id="news">Welcome Events</h2>
         <p>新歓情報</p>
-        <p>X（旧 Twitter）にて新歓を行っております。いつでも入部お待ちしております</p>
+        <p>X（旧 Twitter）にて新歓を行っております。いつでも入部お待ちしております。入部希望の方はJoing the clubをクリック!!</p>
 
         <div class="button-container">
-            <a href="#" class="button">新歓X</a>
+            <a href="https://x.com/uec_muscle" class="button">新歓X</a>
             <a href="join.html" class="button">Joining the club</a>
         </div>
     </div>
