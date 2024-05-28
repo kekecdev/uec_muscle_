@@ -9,7 +9,10 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            /* background-color: #f4f4f9; */
+            background: linear-gradient(to bottom, #2dd861, #dcdcdc);
+            /* これによって上から下に向かって少しずつ色が変化するグラデーションが作られます。 */
+   
             color: #333;
         }
         .menu-button {
@@ -189,10 +192,20 @@
         const newsBoxes = document.querySelectorAll('.news-box');
         let isDragging = false;
 
-        menuButton.addEventListener('mousedown', (event) => {
-            isDragging = true;
+        menuButton.addEventListener('mouseover', () => {
             menu.style.display = 'block';
-            event.preventDefault();
+        });
+
+        menuButton.addEventListener('mouseout', () => {
+            menu.style.display = 'none';
+        });
+
+        menu.addEventListener('mouseover', () => {
+            menu.style.display = 'block';
+        });
+
+        menu.addEventListener('mouseout', () => {
+            menu.style.display = 'none';
         });
 
         document.addEventListener('mousemove', (event) => {
